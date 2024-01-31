@@ -10,17 +10,21 @@ header {
 }
 
 header .logo {
+    background-image: url("./img/logorestaurante-removebg-preview.png");
+    background-size: cover;
+    background-position: center center;
     margin: 0;
-    padding: 25px;
+    padding: 50px;
     font-weight: bold;
-    color: blueviolet;
-    font-size: 1.6em;
 }
 
 header .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:center;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 header nav {
     display: flex;
@@ -58,7 +62,7 @@ header a:hover {
 }
 
 #hero button{
-    font-size: 1.75em;
+    font-size: 2.5em;
 
 }
 
@@ -106,7 +110,7 @@ button:hover {
 }
 
 #nuestros_eventos .container {
-    padding: 150px 12px;
+    padding: 120px 0px 0px 0px;
 
 }
 
@@ -137,6 +141,13 @@ button:hover {
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/eventolove-wedding-bodas-tartaspersonalizadas-babyshower-cumpleaños-primercumpleaños-comunion-bautizo-scaled.jpg);
 }
 
+#nuestros_eventos .contactanos{
+    background-size: cover;
+    background-position: center center;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+}
 
 h1 {
     font-size: 3.5em;
@@ -147,7 +158,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.25em;
+    font-size: 1.5em;
 }
 
 p {
@@ -161,15 +172,13 @@ ul {
 li {
     font-size: 1.25em;
 }
+#Bloque2{
+    background-color: rgb( 212, 172, 13 );
+}
 
 #Bloque2 .container{
     text-align: center;
-    padding: 250px 12px;
-}
-
-#Bloque2 li{
-    margin: 16px 0px;
-    font-weight: bold;
+    padding: 100px 12px;
 }
 
 #Bloque3{
@@ -184,11 +193,11 @@ li {
 }
 
 #Bloque3 button{
-    font-size: 5vw;
+    font-size: 3vw;
 }
 
 #Bloque3 h2{
-    font-size: 9vw;
+    font-size: 7vw;
     color: black;
 }
 
@@ -230,11 +239,11 @@ footer .container{
     }
 
     #Bloque1 .img-container{
-        background-image: url("./img/lomo-saltado-1.jpg");
+        background-image: url("./img/241380676_114173150986354_243972166155483239_n.jpg");
         background-size: cover;
         background-position: center center;
-        height: 500px;
-        width: 400px;    
+        height: 520px;
+        width: 500px;    
     }
 
     #Bloque1 h2{
