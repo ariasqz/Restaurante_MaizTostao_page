@@ -1,19 +1,40 @@
-* {
-    box-sizing: border-box;
+:root {
+    --brand: rgb(212, 172, 13);
+    --brand-dark: rgb(183, 149, 11);
+    --muted-text: #555;
+    --heading: #333;
+    --shadow: rgba(0, 0, 0, 0.15);
+    --max-width: 1400px;
+    --container-padding: 2rem;
     font-family: 'Playfair Display', serif;
 }
-html{
-    scroll-behavior: smooth;
 
+* {
+    box-sizing: border-box;
 }
 
- h1 {
-    font-weight: 700;
-  }
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: inherit;
+    color: #222;
+}
 
 header {
     z-index: 1000;
-    background-color: rgb( 212, 172, 13 );
+    background-color: var(--brand);
+    width: 100%;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
 }
 
 header .logo {
@@ -23,61 +44,67 @@ header .logo {
     margin: 0;
     width: 10%;
     padding: 55px;
-    font-weight: bold;
-    transition: transform 0.3s ease;
     cursor: pointer;
+    transition: transform .3s ease;
 }
 
-header .logo:hover,
-
-header .logo:active {
-    animation: bounce 0.5s;
+header .logo:hover,header .logo:active {
+    animation: bounce .5s;
 }
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     30% {
         transform: translateY(-8px);
     }
+
     50% {
         transform: translateY(4px);
     }
+
     70% {
         transform: translateY(-4px);
     }
 }
 
-
-header .container {
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: space-between;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
 header nav {
     display: flex;
     flex-direction: column;
     text-align: center;
     padding-bottom: 25px;
 }
+
 header nav a {
     text-decoration: none;
-    padding: 0.6em 1.2em;
+    padding: .6em 1.2em;
     border-radius: 8px;
-    transition: all 0.3s ease;
-
+    transition: all .3s ease;
     font-weight: bold;
     color: black;
     font-size: 1.3em;
 }
 
-header a:hover {
-    color:rgb(245, 245, 245);
+header nav a:hover {
+    color: #f5f5f5;
 }
+
+header nav a[href="https://wa.me/573127528524"] {
+    background: #ff9800;
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+header nav a[href="https://wa.me/573127528524"]:hover {
+    background: #e68900;
+    transform: scale(1.05);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+}
+
 
 #hero {
     display: flex;
@@ -97,16 +124,12 @@ header a:hover {
     color: white;
     font-size: clamp(1.5rem, 5vw, 3rem);
     text-align: center;
+    font-weight: 700;
 }
 
-#hero button{
+#hero button {
     font-size: clamp(1rem, 3vw, 1.8rem);
-    padding: 0.6em 1.2em; 
-
-}
-
-body {
-    margin: 0;
+    padding: .6em 1.2em;
 }
 
 button {
@@ -117,79 +140,102 @@ button {
     border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     color: white;
-    background-color: rgb( 212, 172, 13);
+    background-color: var(--brand);
 }
 
 button:hover {
     color: black;
-    background-color: rgb(  183, 149, 11 );
+    background-color: var(--brand-dark);
     cursor: pointer;
 }
 
 .container {
-    max-width: 1400px;
-    margin: auto;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
 }
 
-#Bloque1{ 
-    padding:4rem 2rem;
-    background:#fff; 
+#Bloque1 {
+    padding: 4rem 2rem;
+    background: #fff;
 }
 
-#Bloque1 .container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:2rem;
-    align-items:center;
-    justify-content:center;
+#Bloque1 .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
 }
 
-#Bloque1 .img-container{
-    position:relative;
-    flex:1 1 400px;
-    min-height:300px;
-    max-width:500px;
-    border-radius:12px;
-    overflow:hidden;
+#Bloque1 .img-container {
+    position: relative;
+    flex: 1 1 400px;
+    min-height: 750px;
+    max-width: 550px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-#Bloque1 .img-container .bg-video{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    min-width:100%;
-    min-height:100%;
-    object-fit:cover;
-    object-position:center; 
-    z-index:0;
-    pointer-events:none;
+#Bloque1 .img-container .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    pointer-events: none;
 }
 
-#Bloque1 .class_container{
-    flex:1 1 400px;
-    max-width:500px;
+#Bloque1 .class_container {
+    flex: 1 1 400px;
+    max-width: 500px;
 }
 
-#Bloque1 .class_container h2{
+#Bloque1 .class_container h2 {
     font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin-bottom:1rem;
-    color:var(--heading);
+    margin-bottom: 1rem;
+    color: var(--heading);
 }
 
-#Bloque1 .class_container p{ 
-    font-size: clamp(1rem, 2vw, 1.2rem); 
-    line-height:1.6; 
-    color:var(--muted-text);
+#Bloque1 .class_container p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--muted-text);
 }
 
-@media (max-width:1080px){
-
-    #Bloque1 .img-container{
-        display:none !important;
-        min-height:0 !important; 
+@media (max-width:1080px) {
+    #Bloque1 .img-container {
+        display: none !important;
+        min-height: 0 !important;
     }
 }
+
+@media (max-width: 768px) {
+  #nuestros_eventos h3 {
+    font-size: 1.2rem; 
+  }
+
+  #nuestros_eventos .carta button {
+    font-size: 0.9rem;
+    padding: 0.4em 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  #nuestros_eventos h3 {
+    font-size: 1rem;
+  }
+
+  #nuestros_eventos .carta button {
+    font-size: 0.8rem;
+    padding: 0.3em 0.6em;
+  }
+}
+
 
 #nuestros_eventos {
     background-color: rgb(30, 30, 30);
@@ -198,7 +244,7 @@ button:hover {
 }
 
 #nuestros_eventos .container {
-    padding: 120px 0px 0px 0px;
+    padding: 120px 0 0 0;
 }
 
 #nuestros_eventos h2 {
@@ -206,275 +252,50 @@ button:hover {
     font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
-#nuestros_eventos .eventos .carta button {
-    margin-top: 0;
-
-}
-#nuestros_eventos .carta{
+#nuestros_eventos .carta {
     background-size: cover;
     background-position: center center;
-    padding: 50px 0px;
+    padding: 50px 0;
     margin: 30px;
     border-radius: 15px;
 }
 
-
-.carta:first-child{
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/video5066887916840551787.gif);
-}
-
-.carta:nth-child(2){
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/reserva1.jpg);
-}
-.carta:nth-child(3){
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/eventolove-wedding-bodas-tartaspersonalizadas-babyshower-cumpleaños-primercumpleaños-comunion-bautizo-scaled.jpg);
-}
-
-#nuestros_eventos .contactanos{
+#nuestros_eventos .contactanos {
     background-size: cover;
     background-position: center center;
-    padding: 50px 0px;
+    padding: 50px 0;
     border-radius: 15px;
 }
 
-h1 {
-    font-size: 3.5em;
+#nuestros_eventos .eventos .carta button {
+    margin-top: 0;
 }
 
-h2 {
-    font-size: 2.7em;
+.carta:first-child {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/gifexpo.gif);
 }
 
-h3 {
-    font-size: 2em;
+.carta:nth-child(2) {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/conversatorio\ short.gif);
 }
 
-p {
-    font-size: 1.25em;
+.carta:nth-child(3) {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/un\ pedazito\ de\ historia.gif);
 }
 
-ul {
-    list-style: none;
+#Bloque2 {
+    background-color: var(--brand);
 }
 
-li {
-    font-size: 1.25em;
-}
-#Bloque2{
-    background-color: rgb( 212, 172, 13 );
-}
-
-#Bloque2 .container{
+#Bloque2 .container {
     text-align: center;
     padding: 100px 12px;
 }
 
-#fotos{
+#fotos {
     overflow: hidden;
 }
 
-#fotos .fotos_iner{
-    display: flex;
-}
-
-#fotos .fotos_iner img{
-    width: 100%;
-}
-#Bloque3{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    height: 90vh;
-    color: white;
-    
-}
-
-#Bloque3 button{
-    font-size: 3vw;
-}
-
-#Bloque3 h2{
-    font-size: 7vw;
-    color: black;
-}
-
-footer p{
-    margin: 0;
-    padding: 12px;
-    color: rgb(100, 100, 100    );
-}
-
-footer .container{
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    
-    
-}
-
-@media (min-width: 1080px){
-    header{
-        position: fixed;
-        width: 100%;
-    }
-    
-    header .container{
-        flex-direction: row;
-    }
-    
-    header nav{
-        flex-direction: row;
-        padding-bottom: 0;
-        justify-content: space-between;
-        padding-right: 20px;
-    }
-
-
-    #Bloque1 .container{
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-
-
-    #Bloque1 h2{
-        margin-top: 0px;
-        
-    }
-
-    #Bloque1 .class_container{
-        width: 50%;
-        max-width: 600px;
-        padding-left: 30px;
-        text-align: initial;
-        align-items: center;
-    }
-    
-    #nuestros_eventos .eventos{
-        display: flex;
-        justify-content: center;
-    }
-    
-    #nuestros_eventos p{
-        display: block;
-        margin-bottom: 30px;
-    }
-    
-    #nuestros_eventos h3{
-        margin-top: 0;
-    }
-    
-    #nuestros_eventos .carta{
-        padding: 200px 100px;
-        width: 380px;
-    }
-    
-    #Bloque2 .container{
-        text-align: initial;
-    }
-    
-    #slider{
-        width: 80%;
-        overflow: hidden;
-    }
-
-    #slider .container_slider{
-        display: flex;
-        transition: slide 5s infinite linear;
-    }
-
-    #slider .container_slider img{
-        width: 100%;
-        height: auto;
-    }
-
-    @keyframes slide {
-        0%, 100% {
-            transform: translateX(0);
-        }
-        25% {
-            transform: translateX(-100%);
-        }
-        50% {
-            transform: translateX(-200%);
-        }
-        75% {
-            transform: translateX(-300%);
-        }
-    }
-}
-
-.menu-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s ease, opacity 0.6s ease;
-    opacity: 0;
-}
-
-.menu-content.show {
-    max-height: 2000px; /* suficiente para mostrar todo el contenido */
-    opacity: 1;
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding: 1rem;
-}
-
-.menu-grid img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.menu-grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
-}
-
-/*Estilos de la carta */
-.menu-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s ease, opacity 0.6s ease;
-    opacity: 0;
-}
-
-.menu-content.show {
-    max-height: 2000px;
-    opacity: 1;
-}
-
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding: 1rem;
-} 
-
-.menu-grid img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.menu-grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
-}
-
-
-/* Slider de fotos */
 .slider-container {
     width: 100%;
     overflow: hidden;
@@ -483,7 +304,7 @@ footer .container{
 
 .slider-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform .5s ease-in-out;
     width: 100%;
 }
 
@@ -492,4 +313,161 @@ footer .container{
     flex-shrink: 0;
     border-radius: 10px;
     object-fit: cover;
+}
+
+.menu-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .6s ease, opacity .6s ease;
+    opacity: 0;
+}
+
+.menu-content.show {
+    max-height: 2000px;
+    opacity: 1;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+}
+
+.menu-grid img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.menu-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+#Bloque3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    color: white;
+}
+
+#Bloque3 button {
+    font-size: 3vw;
+}
+
+#Bloque3 h2 {
+    font-size: 7vw;
+    color: black;
+}
+
+footer p {
+    margin: 0;
+    padding: 12px;
+    color: rgb(100, 100, 100);
+}
+
+footer .container {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media (min-width:1080px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    header .container {
+        flex-direction: row;
+    }
+
+    header nav {
+        flex-direction: row;
+        padding-bottom: 0;
+        justify-content: space-between;
+        padding-right: 20px;
+    }
+
+    #Bloque1 .container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #Bloque1 .class_container {
+        width: 50%;
+        max-width: 600px;
+        padding-left: 30px;
+        text-align: initial;
+        align-items: center;
+    }
+
+    #nuestros_eventos .eventos {
+        display: flex;
+        justify-content: center;
+    }
+
+    #nuestros_eventos p {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #nuestros_eventos h3 {
+        margin-top: 0;
+    }
+
+    #nuestros_eventos .carta {
+        padding: 200px 100px;
+        width: 380px;
+    }
+
+    #slider {
+        width: 80%;
+        overflow: hidden;
+    }
+
+    #slider .container_slider {
+        display: flex;
+        transition: slide 5s infinite linear;
+    }
+
+    #slider .container_slider img {
+        width: 100%;
+        height: auto;
+    }
+
+    @keyframes slide {
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-100%);
+        }
+
+        50% {
+            transform: translateX(-200%);
+        }
+
+        75% {
+            transform: translateX(-300%);
+        }
+    }
+}
+
+@media (max-width:600px) {
+    #Bloque1 .img-container .bg-video {
+        display: none !important;
+    }
 }
