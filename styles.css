@@ -347,6 +347,32 @@ button:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
+@media (max-width: 800px) {
+  .menu-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .menu-grid img {
+    flex: 0 0 80%;
+    max-height: 610px; 
+    scroll-snap-align: center;
+  }
+
+  /* ocultar scrollbar en móviles */
+  .menu-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .menu-grid {
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+}
+
+
 #Bloque3 {
     display: flex;
     align-items: center;
@@ -357,13 +383,19 @@ button:hover {
     color: white;
 }
 
-#Bloque3 button {
-    font-size: 3vw;
-}
-
 #Bloque3 h2 {
     font-size: 7vw;
     color: black;
+}
+
+#Bloque3 img {
+    width: 20%;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+#Bloque3 img:hover, #Bloque3 img:active {
+    animation: bounce .5s;
 }
 
 footer p {
@@ -443,6 +475,10 @@ footer .container {
     #slider .container_slider img {
         width: 100%;
         height: auto;
+    }
+
+    #Bloque3 img{
+        width: 50%;
     }
 
     @keyframes slide {
