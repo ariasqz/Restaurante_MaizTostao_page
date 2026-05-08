@@ -680,6 +680,10 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
 }
 
+.visible{
+  visibility: visible;
+}
+
 .fixed{
   position: fixed;
 }
@@ -1846,6 +1850,10 @@ h1, h2, h3, h4, h5, h6 {
      object-fit: cover;
 }
 
+.p-1{
+  padding: 0.25rem;
+}
+
 .p-2{
   padding: 0.5rem;
 }
@@ -2361,6 +2369,10 @@ h1, h2, h3, h4, h5, h6 {
     opacity: var(--tw-exit-opacity, 1);
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
   }
+}
+
+.fade-in{
+  --tw-enter-opacity: 0;
 }
 
 .duration-1000{
