@@ -764,7 +764,6 @@ var ReservationModal = ({ onClose }) => {
 							className: "flex items-center gap-3",
 							children: [/* @__PURE__ */ jsx("div", {
 								className: "w-8 h-8 rounded-lg overflow-hidden flex-shrink-0",
-								style: { background: m.color },
 								children: /* @__PURE__ */ jsx("img", {
 									src: m.logo,
 									alt: m.name,
