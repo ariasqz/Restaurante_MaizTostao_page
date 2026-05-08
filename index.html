@@ -1,48 +1,144 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dwhbqktyy/image/upload/v1777004528/logo_y57zko.png" />
-    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dwhbqktyy/image/upload/v1777004528/logo_y57zko.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
-    
-    <!-- Primary Meta -->
-    <title>Maiz Tostao Restaurante | Cocina Santandereana y Peruana</title>
-    <meta name="description" content="Restaurante Maiz Tostao en Pinchote, Santander. Fusión de cocina santandereana y peruana con ingredientes frescos y sabores auténticos. ¡Reserva tu mesa!" />
-    <meta name="keywords" content="restaurante santander, cocina santandereana, comida peruana, maiz tostao, pinchote, fusión gastronómica, reservas" />
-    <meta name="author" content="Maiz Tostao Restaurante" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/dwhbqktyy/image/upload/v1777004528/logo_y57zko.png" />
+  <link rel="apple-touch-icon" href="https://res.cloudinary.com/dwhbqktyy/image/upload/v1777004528/logo_y57zko.png" />
 
-    <!-- Open Graph (WhatsApp, Facebook) -->
-    <meta property="og:type"        content="restaurant" />
-    <meta property="og:site_name"   content="Maiz Tostao Restaurante" />
-    <meta property="og:title"       content="Maiz Tostao | Cocina Santandereana y Peruana" />
-    <meta property="og:description" content="Fusión de sabores auténticos en Pinchote, Santander. Reserva tu mesa o pide a domicilio. ¡Ven y vive la experiencia!" />
-    <meta property="og:image"       content="https://res.cloudinary.com/dwhbqktyy/image/upload/v1777004357/lomo-saltado-1_jyuvo1.jpg" />
-    <meta property="og:image:width"  content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt"   content="Plato estrella de Maiz Tostao Restaurante" />
-    <meta property="og:url"         content="https://maiztostao.com" />
-    <meta property="og:locale"      content="es_CO" />
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content="Maiz Tostao | Cocina Santandereana y Peruana" />
-    <meta name="twitter:description" content="Fusión de sabores auténticos en Pinchote, Santander. ¡Reserva tu mesa!" />
-    <meta name="twitter:image"       content="https://res.cloudinary.com/dwhbqktyy/image/upload/v1777004357/lomo-saltado-1_jyuvo1.jpg" />
+  <!-- Primary Meta -->
+  <title>Maiz Tostao Restaurante | Cocina Santandereana y Peruana</title>
+  <meta name="description"
+    content="Restaurante Maiz Tostao en Pinchote, Santander. Fusión de cocina santandereana y peruana con ingredientes frescos y sabores auténticos. ¡Reserva tu mesa!" />
+  <meta name="keywords"
+    content="restaurante santander, cocina santandereana, comida peruana, maiz tostao, pinchote, fusión gastronómica, reservas" />
+  <meta name="author" content="Maiz Tostao Restaurante" />
 
-    <!-- WhatsApp prefetch hint -->
-    <meta property="og:phone_number" content="+573127528524" />
+  <!-- Open Graph (WhatsApp, Facebook) -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:site_name" content="Maiz Tostao Restaurante" />
+  <meta property="og:title" content="Maiz Tostao | Cocina Santandereana y Peruana" />
+  <meta property="og:description"
+    content="Fusión de sabores auténticos en Pinchote, Santander. Reserva tu mesa o pide a domicilio. ¡Ven y vive la experiencia!" />
+  <meta property="og:image"
+    content="https://res.cloudinary.com/dwhbqktyy/image/upload/v1777004357/lomo-saltado-1_jyuvo1.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Plato estrella de Maiz Tostao Restaurante" />
+  <meta property="og:url" content="https://maiztostao.com" />
+  <meta property="og:locale" content="es_CO" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Maiz Tostao | Cocina Santandereana y Peruana" />
+  <meta name="twitter:description" content="Fusión de sabores auténticos en Pinchote, Santander. ¡Reserva tu mesa!" />
+  <meta name="twitter:image"
+    content="https://res.cloudinary.com/dwhbqktyy/image/upload/v1777004357/lomo-saltado-1_jyuvo1.jpg" />
+
+  <meta property="og:phone_number" content="+573127528524" />
+
+  <style>
+    #page-loader {
+      position: fixed;
+      inset: 0;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .loader-logo {
+      width: 80px;
+      height: 80px;
+      -o-object-fit: contain;
+         object-fit: contain;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .loader-bar {
+      width: 200px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .loader-fill {
+      height: 100%;
+      background: #E6B800;
+      border-radius: 9999px;
+      animation: load 1.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.7;
+        transform: scale(0.95);
+      }
+    }
+
+    @keyframes load {
+      0% {
+        width: 0%;
+        margin-left: 0;
+      }
+
+      50% {
+        width: 70%;
+        margin-left: 0;
+      }
+
+      100% {
+        width: 0%;
+        margin-left: 100%;
+      }
+    }
+  </style>
 
 
-    <script type="module" crossorigin src="/assets/index-BcYuCULF.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DVQuoNfZ.css">
-  </head>
-  <body>
-    <!--app-html-->
-    <div id="root"></div>
-  </body>
+  <script type="module" crossorigin src="/assets/index-ClSJoPOH.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BKxnOYXJ.css">
+</head>
+
+<body>
+  <!--app-html-->
+  <div id="root"></div>
+</body>
+<div id="page-loader">
+  <div class="loader-content">
+    <img src="https://res.cloudinary.com/dwhbqktyy/image/upload/v1777004528/logo_y57zko.png" alt="Maíz Tostao"
+      class="loader-logo" />
+    <div class="loader-bar">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+</div>
+
 </html>
