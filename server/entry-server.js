@@ -84,11 +84,9 @@ var Header = () => {
 					/* @__PURE__ */ jsx("div", {
 						className: "hidden lg:flex items-center gap-4",
 						children: /* @__PURE__ */ jsxs("a", {
-							href: "https://wa.me/573127528524",
-							target: "_blank",
-							rel: "noopener noreferrer",
+							href: "tel:+573127528524",
 							className: "btn-primary flex items-center gap-2 text-sm",
-							children: [/* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }), "Contáctanos"]
+							children: [/* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }), "Llámanos"]
 						})
 					}),
 					/* @__PURE__ */ jsx("button", {
@@ -111,11 +109,9 @@ var Header = () => {
 						className: "block text-gray-700 font-medium py-2 hover:text-[#E6B800] transition-colors",
 						children: link.name
 					}, link.name)), /* @__PURE__ */ jsxs("a", {
-						href: "https://wa.me/573127528524",
-						target: "_blank",
-						rel: "noopener noreferrer",
+						href: "tel:+573127528524",
 						className: "btn-primary flex items-center justify-center gap-2 w-full mt-4",
-						children: [/* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }), "Contáctanos"]
+						children: [/* @__PURE__ */ jsx(Phone, { className: "w-4 h-4" }), "Llámanos"]
 					})]
 				})
 			})]
@@ -2161,6 +2157,85 @@ var ScrollToTop = () => {
 	});
 };
 //#endregion
+//#region src/components/WhatsAppWidget.tsx
+var WhatsAppWidget = () => {
+	const [isOpen, setIsOpen] = useState(false);
+	return /* @__PURE__ */ jsxs("div", {
+		className: "fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3",
+		children: [isOpen && /* @__PURE__ */ jsxs("div", {
+			className: "bg-white rounded-2xl shadow-2xl w-80 overflow-hidden",
+			children: [/* @__PURE__ */ jsx("div", {
+				className: "bg-[#25D366] px-4 py-5",
+				children: /* @__PURE__ */ jsxs("div", {
+					className: "flex items-start justify-between",
+					children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
+						className: "text-white font-bold text-base leading-tight",
+						children: "Comenzar una conversación"
+					}), /* @__PURE__ */ jsxs("p", {
+						className: "text-white/80 text-sm mt-1",
+						children: [
+							"¡Hola! Haz clic en el botón de abajo para chatear por",
+							" ",
+							/* @__PURE__ */ jsx("strong", {
+								className: "text-white",
+								children: "WhatsApp"
+							})
+						]
+					})] }), /* @__PURE__ */ jsx("button", {
+						onClick: () => setIsOpen(false),
+						className: "text-white/80 hover:text-white transition-colors ml-2 mt-0.5 flex-shrink-0",
+						children: /* @__PURE__ */ jsx(X, { className: "w-5 h-5" })
+					})]
+				})
+			}), /* @__PURE__ */ jsxs("div", {
+				className: "bg-gray-50 px-4 py-3",
+				children: [
+					/* @__PURE__ */ jsx("p", {
+						className: "text-gray-400 text-xs mb-3",
+						children: "El equipo suele responder en unos minutos."
+					}),
+					/* @__PURE__ */ jsxs("a", {
+						href: `https://wa.me/573127528524?text=${encodeURIComponent("¡Hola Maíz Tostao! 🌽 Quisiera obtener más información.")}`,
+						target: "_blank",
+						rel: "noopener noreferrer",
+						className: "flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition-shadow border border-gray-100",
+						children: [
+							/* @__PURE__ */ jsx("div", {
+								className: "w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0",
+								children: /* @__PURE__ */ jsx(MessageCircle, { className: "w-6 h-6 text-white" })
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: "flex-1",
+								children: [/* @__PURE__ */ jsx("p", {
+									className: "font-semibold text-gray-800 text-sm",
+									children: "Maíz Tostao"
+								}), /* @__PURE__ */ jsx("p", {
+									className: "text-gray-400 text-xs",
+									children: "Restaurante"
+								})]
+							}),
+							/* @__PURE__ */ jsx("div", {
+								className: "w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0",
+								children: /* @__PURE__ */ jsx(MessageCircle, { className: "w-4 h-4 text-white" })
+							})
+						]
+					}),
+					/* @__PURE__ */ jsx("p", {
+						className: "text-center text-gray-300 text-xs mt-3",
+						children: "powered by WhatsApp"
+					})
+				]
+			})]
+		}), /* @__PURE__ */ jsx("button", {
+			onClick: () => setIsOpen(!isOpen),
+			className: "w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 active:scale-95",
+			style: { background: "linear-gradient(135deg, #25D366, #128C7E)" },
+			"aria-label": "Abrir chat de WhatsApp",
+			children: isOpen ? /* @__PURE__ */ jsx(X, { className: "w-6 h-6 text-white" }) : /* @__PURE__ */ jsx(MessageCircle, { className: "w-7 h-7 text-white" })
+		})]
+	});
+};
+//#endregion
 //#region src/App.tsx
 function App() {
 	return /* @__PURE__ */ jsxs("div", {
@@ -2176,7 +2251,8 @@ function App() {
 				/* @__PURE__ */ jsx(Contact, {})
 			] }),
 			/* @__PURE__ */ jsx(Footer, {}),
-			/* @__PURE__ */ jsx(ScrollToTop, {})
+			/* @__PURE__ */ jsx(ScrollToTop, {}),
+			/* @__PURE__ */ jsx(WhatsAppWidget, {})
 		]
 	});
 }
