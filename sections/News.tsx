@@ -34,7 +34,7 @@ const News = () => {
 
   const news = [
     {
-      title: 'Un pedacito de historia',
+      title: 'Dia De Las Madres',
       description: 'Vive una tarde llena de emociones, buena música y sabores que conquistan el corazón en Maiz Tostao Restaurante ',
       date: '17 Mayo 2026',
       image: 'https://res.cloudinary.com/dwhbqktyy/image/upload/v1778591536/SaveClip.App_687789371_18075251732644100_7726756098335586152_n_cwfxne.jpg',
