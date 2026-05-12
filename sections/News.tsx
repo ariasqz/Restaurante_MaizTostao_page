@@ -34,6 +34,14 @@ const News = () => {
 
   const news = [
     {
+      title: 'Un pedacito de historia',
+      description: 'Vive una tarde llena de emociones, buena música y sabores que conquistan el corazón en Maiz Tostao Restaurante ',
+      date: '17 Mayo 2026',
+      image: 'https://res.cloudinary.com/dwhbqktyy/image/upload/v1778591536/SaveClip.App_687789371_18075251732644100_7726756098335586152_n_cwfxne.jpg',
+      link: 'https://www.instagram.com/p/DYFYzglFv52/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+      featured: false,
+    },
+    {
       title: 'Burguer Fest 2026',
       description: 'Una experiencia que reúne lo mejor de nuestra cocina, identidad y sabor.',
       date: '18 - 26 Abril 2026',
@@ -47,14 +55,6 @@ const News = () => {
       date: '31 Mayo 2025',
       image: 'https://res.cloudinary.com/dwhbqktyy/image/upload/v1777003455/SaveClip.App_533118353_18190583434316616_6957001046809440780_n_mrgecw.jpg',
       link: 'https://www.instagram.com/reel/DNTCoT7tch1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
-      featured: false,
-    },
-    {
-      title: 'Un pedacito de historia',
-      description: 'Descubre los orígenes de nuestros platos más emblemáticos y la historia detrás de cada receta.',
-      date: null,
-      image: 'https://res.cloudinary.com/dwhbqktyy/image/upload/v1777001775/SaveClip.App_524651681_765827495811133_7384363894445476023_n_rdeqfs.jpg',
-      link: 'https://www.instagram.com/reel/DNTCoT7tch1/',
       featured: false,
     },
     {
